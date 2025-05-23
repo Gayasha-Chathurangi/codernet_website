@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CODERNET Solutions Pvt Ltd</title>
+<!-- Google Fonts for better typography -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: transparent;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #8e2de2;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+nav:hover {
+  background-color: #6c00f0;
+}
+nav img.logo {
+  height: 50px;
+  margin-right: 20px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  display: block;
+  padding: 16px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+nav ul li a:hover {
+  background-color: #6c00f0;
+  border-radius: 4px;
+  transform: scale(1.05);
+}
+
+/* Header Banner */
+header {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-image: url('https://scontent.fcmb11-1.fna.fbcdn.net/v/t39.30808-6/469122440_583323300767725_2691737297345507316_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGjkhqFYt8Q1bE3FB6qi0_611Uj1rF4StzXVSPWsXhK3K9qwl9M_ZSBordArhksL5uyp_PJ-Fe0D02kLocTlZQk&_nc_ohc=K7DehYTx9I4Q7kNvwGyKpLE&_nc_oc=Adl3TJnaB1R6602twWe20YnIU7DwdQe7BB4itIMbLQw23oHB26V9nPFRDajII3VyDUeq6vKmPtSAfDXmkd9AwvEW&_nc_zt=23&_nc_ht=scontent.fcmb11-1.fna&_nc_gid=969D188jgBvSWxUCN9gm7Q&oh=00_AfLRMzQ1kPAQoWUHAtUgfZ1MUSkwjVAImZDhhGjZr_ZOTg&oe=68333905');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+.banner-container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease-out;
+}
+.banner-content h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.banner-content p {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  background-color: transparent;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  margin: 20px 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+section:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+section h2 {
+  color: #8e2de2;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+h3 {
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ABOUT US + VISION & MISSION - add equal height styles */
+#about, #contact {
+  /* Make these sections have a consistent height */
+  min-height: 80vh; /* Adjust height as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content inside */
+  padding: 40px 20px;
+}
+
+/* ABOUT US specific styles */
+#about {
+  max-width: 1200px;
+  margin: auto;
+  text-align: justify;
+}
+#about p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+#about img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+#about img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#vision-mission-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.box {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 45%;
+  min-width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.box:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+}
+.box h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #8e2de2;
+  text-align: center;
+}
+.box p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+.box img:hover {
+  transform: scale(1.02);
+}
+
+/* SERVICES Section */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.service-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 22%;
+  min-width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.service-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+.icon-container {
+  margin-bottom: 15px;
+}
+.service-icon {
+  fill: #8e2de2;
+  width: 50px;
+  height: 50px;
+  transition: fill 0.3s;
+}
+.service-box:hover .service-icon {
+  fill: #6c00f0;
+}
+.service-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
+.service-box p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Contact Section */
+#contact {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+  background-color: transparent;
+  border-radius: 12px;
+  box-shadow: transparent;
+}
+#contact h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #8e2de2;
+}
+#contact p {
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+#contact a {
+  color: #6c00f0;
+  text-decoration: none;
+}
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+}
+footer .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer .logo-section {
+  flex: 1 1 250px;
+  margin-bottom: 20px;
+}
+footer .logo-section img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+footer .company-info p {
+  margin: 4px 0;
+}
+footer h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+footer ul {
+  list-style: none;
+}
+footer ul li {
+  margin: 6px 0;
+}
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}
+footer .cta {
+  flex: 1 1 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+footer button {
+  background-color: #0066ff;
+  color: #fff;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+footer button:hover {
+  background-color: #0052cc;
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media(max-width: 1024px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-box {
+    width: 80%;
+  }
+  #vision-mission-container {
+    flex-direction: column;
+  }
+  .box {
+    max-width: 90%;
+  }
+}
+@media(max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+  header {
+    height: auto;
+  }
+  header .banner-container {
+    max-width: 90%;
+  }
+  .service-box {
+    width: 90%;
+  }
+}
+@media(max-width: 480px) {
+  #about h3 {
+    font-size: 20px;
+  }
+  section h2 {
+    font-size: 28px;
+  }
+  footer {
+    padding: 20px 10px;
+  }
+  footer .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .cta {
+    margin-top: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <img src="https://scontent.fcmb11-2.fna.fbcdn.net/v/t39.30808-1/241204566_105978675168859_8603408413388491713_n.png?stp=dst-png_s200x200&_nc_cat=105&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHb_9PTlJ_ggeHBarYzNOjk_svz2rZJwzr-y_PatknDOi7-GYxqDsjVYvBAQhSZ3TF2DAwXXOcuTCKIrXZEOIG8&_nc_ohc=hWqg9XnHmkEQ7kNvwFPxivX&_nc_oc=AdmbO-hz6xOzrpal02sZ1jI_f7xoG1Nu2XbO7X2LOiJYEO2PSNO5kF-sMyq2cHPxAvAIRbi6epruv0FlBj0wktid&_nc_zt=24&_nc_ht=scontent.fcmb11-2.fna&_nc_gid=969D188jgBvSWxUCN9gm7Q&oh=00_AfLA2i_5INzdGrid8d2oondeGfJ9taS7WJroPSeVbA3P6g&oe=68334CF1" alt="CODERNET Logo" class="logo" />
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- Header Banner -->
+<header>
+  <div class="banner-container">
+    <div class="banner-content">
+      <h1>Take Great IT Solutions To Grow Your Business</h1>
+      <p>CODERNET Solutions Pvt Ltd is a Melbourne-based IT service provider committed to delivering innovative and reliable technology solutions. </p>
+    </div>
+  </div>
+</header>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services-container">
+    <!-- Service 1 -->
+    <div class="service-box" style="animation: fadeInUp 1s;">
+      <div class="icon-container">
+        <!-- Icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="30" stroke="#8e2de2" stroke-width="4" fill="none"/>
+          <circle cx="32" cy="20" r="4" fill="#8e2de2"/>
+          <circle cx="20" cy="32" r="4" fill="#8e2de2"/>
+          <circle cx="44" cy="32" r="4" fill="#8e2de2"/>
+          <circle cx="32" cy="44" r="4" fill="#8e2de2"/>
+        </svg>
+      </div>
+      <h3>AI / ML Solutions</h3>
+      <p>Artificial Intelligence (AI) and Machine Learning (ML) are at the heart of modern innovation. We develop intelligent systems that analyze data, recognize patterns, and make autonomous decisions to enhance business operations. Our solutions include predictive analytics, automation tools, chatbots, and recommendation engines, empowering your business to be smarter, faster, and more efficient.</p>
+    </div>
+    <!-- Service 2 -->
+    <div class="service-box" style="animation: fadeInUp 1.2s;">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 64 64">
+          <rect x="10" y="30" width="8" height="24" fill="#8e2de2"/>
+          <rect x="24" y="20" width="8" height="34" fill="#8e2de2"/>
+          <rect x="38" y="10" width="8" height="44" fill="#8e2de2"/>
+          <rect x="52" y="25" width="8" height="29" fill="#8e2de2"/>
+        </svg>
+      </div>
+      <h3>Data Analytics</h3>
+      <p>Transform raw data into meaningful insights with our advanced analytics services. We enable organizations to track performance, identify trends, and make data-driven decisions—from customer behavior analysis to financial forecasting—unlocking your data’s full potential.</p>
+    </div>
+    <!-- Service 3 -->
+    <div class="service-box" style="animation: fadeInUp 1.4s;">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 64 64">
+          <rect x="8" y="16" width="48" height="32" fill="#8e2de2" stroke="#fff" stroke-width="2"/>
+          <circle cx="16" cy="32" r="4" fill="#fff"/>
+          <circle cx="48" cy="32" r="4" fill="#fff"/>
+        </svg>
+      </div>
+      <h3>Web Development</h3>
+      <p>Build modern, responsive, and user-friendly websites reflecting your brand. From static pages to complex platforms, we focus on design, speed, SEO, and usability to ensure your site looks great and performs exceptionally.</p>
+    </div>
+    <!-- Service 4 -->
+    <div class="service-box" style="animation: fadeInUp 1.6s;">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 64 64">
+          <rect x="24" y="8" width="16" height="48" rx="4" fill="#8e2de2"/>
+          <circle cx="32" cy="58" r="2" fill="#8e2de2"/>
+        </svg>
+      </div>
+      <h3>Mobile App Development</h3>
+      <p>Deliver high-performance applications for Android and iOS. From concept to deployment, we ensure intuitive design, seamless functionality, and scalability for your business or on-demand services.</p>
+    </div>
+    <!-- Service 5 -->
+    <div class="service-box" style="animation: fadeInUp 1.8s;">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 64 64">
+          <rect x="12" y="12" width="40" height="40" fill="#8e2de2"/>
+          <line x1="12" y1="32" x2="52" y2="32" stroke="#fff" stroke-width="2"/>
+          <line x1="32" y1="12" x2="32" y2="52" stroke="#fff" stroke-width="2"/>
+        </svg>
+      </div>
+      <h3>ERP Development</h3>
+      <p>Streamline and integrate your business processes with tailored ERP solutions. Manage finance, HR, inventory, procurement, and CRM for better collaboration, productivity, and decision-making.</p>
+    </div>
+    <!-- Service 6 -->
+    <div class="service-box" style="animation: fadeInUp 2s;">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 64 64">
+          <rect x="8" y="20" width="48" height="24" fill="#8e2de2"/>
+          <circle cx="52" cy="32" r="4" fill="#fff"/>
+        </svg>
+      </div>
+      <h3>POS Development</h3>
+      <p>Customized POS systems for retail and hospitality—supporting sales, inventory, reporting, and customer engagement. Scalable solutions for any business size or industry, offline or cloud-based.</p>
+    </div>
+    <!-- Service 7 -->
+    <div class="service-box" style="animation: fadeInUp 2.2s;">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 64 64">
+          <circle cx="32" cy="20" r="4" fill="#8e2de2"/>
+          <rect x="20" y="28" width="24" height="16" fill="#8e2de2"/>
+        </svg>
+      </div>
+      <h3>UI/UX Design</h3>
+      <p>Create engaging, user-centered interfaces that are visually appealing and intuitive. Enhance user satisfaction through seamless interaction, layout, and branding.</p>
+    </div>
+    <!-- Service 8 -->
+    <div class="service-box" style="animation: fadeInUp 2.4s;">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 64 64">
+          <polygon points="8,56 56,56 32,8" fill="#8e2de2"/>
+        </svg>
+      </div>
+      <h3>Digital Marketing</h3>
+      <p>Expand your reach with SEO, social media, content marketing, email campaigns, and PPC advertising. Data-driven strategies to target, measure, and boost your ROI.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About Us + Vision & Mission -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>CODERNET Solutions Pvt Ltd is a forward-thinking IT company based in Melbourne, Australia, specializing in delivering innovative and transformative digital solutions to businesses across various industries. Established with the vision of bridging the gap between technology and business growth, we empower organizations by offering intelligent, scalable, and future-ready IT services. Our areas of expertise include Artificial Intelligence and Machine Learning solutions, data analytics, custom ERP and POS development, website and mobile application development, UI/UX design, and digital marketing. With a team of passionate professionals and a strong commitment to quality and innovation, we help our clients navigate their digital journey with confidence and success. At CODERNET Solutions, we believe in building long-term partnerships by consistently exceeding expectations through our tailored, client-centric approach.</p>
+  <h3>Our Vision & Mission</h3>
+  <div id="vision-mission-container">
+    <!-- Vision -->
+    <div class="box" style="animation-delay: 0.2s;">
+      <h3>Our Vision</h3>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Vision Image" />
+      <p>To be a global leader in providing innovative IT solutions that empower businesses to achieve their fullest potential.</p>
+    </div>
+    <!-- Mission -->
+    <div class="box" style="animation-delay: 0.4s;">
+      <h3>Our Mission</h3>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Mission Image" />
+      <p>To deliver high-quality, reliable, and cost-effective technology services that drive growth and success for our clients worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Us -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-container">
+    <!-- Image -->
+    <div class="contact-image">
+      <img src="https://media.licdn.com/dms/image/v2/C4E1BAQEi85VuokSbww/company-background_10000/company-background_10000/0/1584152318185?e=2147483647&v=beta&t=ach5-uL7GQurtf7kVC7M7bJP5m2MxPttZwcs_U0dGmc" alt="Contact Us Image" />
+    </div>
+    <!-- Contact Details -->
+    <div class="contact-details">
+      <p><strong>Address:</strong> Melbourne, VIC, Australia, 3174</p>
+      <p><strong>Phone:</strong> +61 452 225 536</p>
+      <p><strong>Email:</strong> <a href="mailto:codernetsolutions.info@gmail.com">codernetsolutions.info@gmail.com</a></p>
+      <p><strong>Website:</strong> <a href="http://www.codernets.com" target="_blank">www.codernets.com</a></p>
+      <p><strong>Working Hours:</strong> Always Open</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top container">
+    <!-- Company Info -->
+    <div class="logo-section">
+      <img src="https://scontent.fcmb11-2.fna.fbcdn.net/v/t39.30808-1/241204566_105978675168859_8603408413388491713_n.png?stp=dst-png_s200x200&_nc_cat=105&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHb_9PTlJ_ggeHBarYzNOjk_svz2rZJwzr-y_PatknDOi7-GYxqDsjVYvBAQhSZ3TF2DAwXXOcuTCKIrXZEOIG8&_nc_ohc=hWqg9XnHmkEQ7kNvwFPxivX&_nc_oc=AdmbO-hz6xOzrpal02sZ1jI_f7xoG1Nu2XbO7X2LOiJYEO2PSNO5kF-sMyq2cHPxAvAIRbi6epruv0FlBj0wktid&_nc_zt=24&_nc_ht=scontent.fcmb11-2.fna&_nc_gid=969D188jgBvSWxUCN9gm7Q&oh=00_AfLA2i_5INzdGrid8d2oondeGfJ9taS7WJroPSeVbA3P6g&oe=68334CF1" alt="Company Logo" />
+      <p style="margin:10px 0;">Beyond Ordinary Tax Solution</p>
+      <p style="margin:10px 0;">+94 779947204</p>
+      <p style="margin:10px 0;">No 41/17, Galkanuwa Road, Gorakana, Keselewatta, Panadura, Sri Lanka</p>
+      <p style="margin:10px 0;">info@rmsbusiness.lk</p>
+    </div>
+    <!-- Other Pages & Work Hours -->
+    <div>
+      <h4>Other Pages</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <h4>Work Hours</h4>
+      <p>8.30 AM - 5.30 PM, Monday - Saturday</p>
+      <p>Our team is available 24/7 to answer your queries</p>
+    </div>
+    <!-- Call to Action -->
+    <div class="cta" style="margin-top:20px;">
+      <button>CALL US TODAY</button>
+    </div>
+  </div>
+</footer>
+
+<!-- Animations -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Contact container for side-by-side layout */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+/* Image styles */
+.contact-image {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+.contact-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+.contact-image img:hover {
+  transform: scale(1.02);
+}
+
+/* Contact details styles (optional, for better readability) */
+.contact-details {
+  flex: 1 1 300px;
+  font-size: 16px;
+  color: #333;
+}
+.contact-details a {
+  color: #6c00f0;
+  text-decoration: none;
+}
+.contact-details a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<!-- Optional: Add some JS for smooth scrolling -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
